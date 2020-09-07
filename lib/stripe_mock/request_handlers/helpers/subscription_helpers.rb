@@ -111,7 +111,15 @@ module StripeMock
 
       def total_items_amount(items)
         total = 0
-        items.each { |i| total += (i[:quantity] || 1) * i[:plan][:amount] }
+        items.each { |i|
+          total += if i[:plan][:amount]
+            (i[:quantity] || 1) * i[:plan][:amount]
+          elsif i[:price][:unit_amount]
+            (i[:quantity] || 1) * i[:price][:unit_amount]
+          else
+            0
+          end
+        }
         total
       end
     end

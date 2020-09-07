@@ -347,6 +347,11 @@ module StripeMock
               created: 1504035972,
               currency: StripeMock.default_currency
             },
+            price: {
+              created: 1504035972,
+              unit_amount: 0,
+              currency: StripeMock.default_currency
+            },
             quantity: 1
           }]
         },
@@ -1139,6 +1144,21 @@ module StripeMock
           id: 'PER_USER_PLAN1',
           object: 'plan',
           amount: 1337,
+          created: 1504716177,
+          currency: StripeMock.default_currency,
+          interval: 'month',
+          interval_count: 1,
+          livemode: false,
+          metadata: {},
+          name: 'StripeMock Default Plan ID',
+          statement_descriptor: nil,
+          trial_period_days: nil
+        },
+        price: {
+          id: 'PER_USER_PLAN1',
+          object: 'price',
+          unit_amount: 0,
+          unit_amount_decimal: "0",
           created: 1504716177,
           currency: StripeMock.default_currency,
           interval: 'month',
