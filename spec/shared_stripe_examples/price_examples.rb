@@ -8,7 +8,7 @@ shared_examples 'Price API' do
     :id => "price_abc123",
     :product => product_id,
     :nickname => "My Mock price",
-    :amount => 9900,
+    :net_amount => 1,
     :currency => "usd",
     :interval => "month"
   } }
@@ -31,7 +31,7 @@ shared_examples 'Price API' do
   it "creates a stripe price" do
     expect(price.id).to eq('price_abc123')
     expect(price.nickname).to eq('My Mock price')
-    expect(price.amount).to eq(9900)
+    expect(price.net_amount).to eq(1)
 
     expect(price.currency).to eq('usd')
     expect(price.interval).to eq("month")
